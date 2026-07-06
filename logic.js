@@ -4,7 +4,7 @@ btn.addEventListener("click", async function(){
     const city = document.getElementById("city").value;
     const name=document.getElementById("cityName");
     const description = document.getElementById("description")
-    const tempreture = document.getElementById("tempreture");
+    const temperature = document.getElementById("temperature");
     const icon = document.getElementById("icon");
 
     if(!city){
@@ -25,7 +25,7 @@ btn.addEventListener("click", async function(){
         console.log(data);
 
         name.textContent = data.location.name;
-        tempreture.textContent = `${data.current.temp_c}°C`;
+        temperature.textContent = `${data.current.temp_c}°C`;
         description.textContent = data.current.condition.text;
         icon.src = `https:${data.current.condition.icon}`;
 
