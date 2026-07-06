@@ -16,8 +16,7 @@ btn.addEventListener("click", async function(){
         const response =await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}` )
 
         if(!response.ok){
-             const errData = await response.json();
-             throw new Error(errData.error.message);
+            throw new Error("City not found. Please check your spelling.");
 
         }
 
@@ -32,6 +31,9 @@ btn.addEventListener("click", async function(){
     }catch(error){
         console.error("the exact error is: ",error);
         description.textContent="something went wrong";
+        name.textContent = "";
+        temperature.textContent = "";
+        icon.src = "";
     }
 
 })
